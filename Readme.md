@@ -17,6 +17,8 @@ Para ejecutar la interfaz de WhatsApp de EchoShare, se necesitan los siguientes 
 ## Documentación de Desarrollo 
 https://github.com/emilioenlaluna/EchoShare-Talent-Hackathon/blob/main/ReadMeDev.md
 
+## Entreagable
+https://github.com/emilioenlaluna/EchoShare-Talent-Hackathon/blob/main/Honey%20EchoShare_compressed.pdf
 
 ## Configuración
 1. Clone el repositorio de EchoShare: `git clone https://github.com/honey-team/echoshare.git`
