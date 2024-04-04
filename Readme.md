@@ -13,9 +13,10 @@ EchoShare es un proyecto desarrollado por el equipo Honey como parte del track d
 ## Requisitos
 Para ejecutar la interfaz de WhatsApp de EchoShare, se necesitan los siguientes requisitos previamente instalados:
 - Python 3.x
-- Biblioteca Twilio para Python (se puede instalar utilizando pip: `pip install twilio`)
-- Cuenta de Twilio con acceso a la API de WhatsApp
-- Configuración de webhooks en la cuenta de Twilio para recibir mensajes de WhatsApp
+
+## Documentación de Desarrollo 
+https://github.com/emilioenlaluna/EchoShare-Talent-Hackathon/blob/main/ReadMeDev.md
+
 
 ## Configuración
 1. Clone el repositorio de EchoShare: `git clone https://github.com/honey-team/echoshare.git`
