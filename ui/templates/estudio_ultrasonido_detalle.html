@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Estudio de Ultrasonido</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        #video, #photo {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #canvas {
+            display: none;
+        }
+
+        .camera, .output {
+            width: 340px;
+            display: inline-block;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        #startbutton {
+            display: block;
+            margin: 20px auto;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #startbutton:hover {
+            background-color: #0056b3;
+        }
+
+        .contentarea {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #processing-message {
+            display: none;
+            font-size: 18px;
+            color: #007bff;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .camera, .output {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        .image-selection, .video-selection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .image-item, .video-item {
+            margin: 10px;
+            text-align: center;
+        }
+
+        img, video {
+            max-width: 300px;
+            max-height: 200px;
+        }
+
+        button {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="contentarea">
+        <h1>Estudio de Ultrasonido para {{ estudio.Paciente }}</h1>
+        <p>Fecha: {{ estudio.Fecha }}</p>
+        <p>Hora: {{ estudio.Hora }}</p>
+        <p>Observaciones: {{ estudio.Observaciones }}</p>
+
+        <h2>Imágenes</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="image-selection">
+                {% for imagen in imagenes %}
+                <div class="image-item">
+                    <img src="{{ imagen.Imagen.url }}" alt="{{ imagen.Tipo }}">
+                    <input type="checkbox" name="selected_images" value="{{ imagen.idImagenUltrasonido }}">
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit" name="action" value="download">Descargar Seleccionadas</button>
+            <button type="submit" name="action" value="share">Compartir Seleccionadas</button>
+        </form>
+
+        <h2>Videos</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="video-selection">
+                {% for video in videos %}
+                <div class="video-item">
+                    <video src="{{ video.Video.url }}" controls></video>
+                    <input type="checkbox" name="selected_videos" value="{{ video.idVideoUltrasonido }}">
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit" name="action" value="download">Descargar Seleccionados</button>
+            <button type="submit" name="action" value="share" formaction="{% url 'compartir' %}">Compartir Seleccionadas</button>
+        </form>
+    </div>
+</body>
+</html>

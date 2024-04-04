@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar Video de Ultrasonido</title>
+</head>
+<body>
+    <h1>Video de Ultrasonido</h1>
+    <p>Estudio Ultrasonido: {{ video.EstudioUltrasonido }}</p>
+    <p>Fecha: {{ video.Fecha }}</p>
+    <p>Tipo: {{ video.Tipo }}</p>
+    <p>Notas: {{ video.Notas }}</p>
+    <p>Calidad: {{ video.Calidad }}</p>
+    
+    <video width="640" height="480" controls>
+        <source src="{{ video.Video.url }}" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+    <video width="640" height="480" controls>
+        <source src="{{ video.avi_file.url }}" type="video/avi">
+        Your browser does not support the video tag.
+    </video>
+    <video controls width="640" height="480">
+        <source src="https://echosharestorage.blob.core.windows.net/media/videos/1.2.276.0.26.1.1.1.2.2020.373.76955.1369680.24903680.avi" type="video/x-msvideo">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+</body>
+</html>

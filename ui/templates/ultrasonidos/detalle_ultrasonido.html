@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="detalle-ultrasonido-container">
+    <h2>Detalle del Ultrasonido</h2>
+    
+    <div class="detalle-ultrasonido-info">
+        <p><strong>Estudio:</strong> {{ estudio.TipoEstudio.Nombre }}</p>
+        <p><strong>Fecha:</strong> {{ estudio.Fecha|date:"d/m/Y" }}</p>
+        <p><strong>Observaciones:</strong> {{ estudio.Observaciones }}</p>
+    </div>
+
+    <h3>Imágenes del Ultrasonido</h3>
+    <div class="ultrasonido-imagenes-container">
+        {% for imagen in imagenes %}
+        <div class="ultrasonido-imagen">
+            <img src="{{ imagen.Imagen.url }}" alt="Imagen de Ultrasonido">
+            <p><strong>Notas:</strong> {{ imagen.Notas }}</p>
+        </div>
+        {% empty %}
+        <p>No hay imágenes para mostrar.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

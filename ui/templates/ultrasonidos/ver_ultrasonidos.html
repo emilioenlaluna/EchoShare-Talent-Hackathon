@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Ultrasonidos de {{ paciente.Nombre }} {{ paciente.Apellido }}</h2>
+
+<table class="ultrasound-results">
+    <thead>
+        <tr>
+            <th>Estudio</th>
+            <th>Fecha</th>
+            <th>Observaciones</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for estudio in estudios_ultrasonido %}
+            <tr>
+                <td>{{ estudio.TipoEstudio.Nombre }}</td>
+                <td>{{ estudio.Fecha }}</td>
+                <td>{{ estudio.Observaciones }}</td>
+                <td>
+                    <button onclick="location.href='{% url 'detalle_ultrasonido' id_paciente=estudio.Paciente.idPaciente estudio_id=estudio.idEstudioUltrasonido %}'">Ver detalles</button>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

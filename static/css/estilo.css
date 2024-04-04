@@ -1,0 +1,178 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff; /* Fondo blanco para la cabecera */
+    padding: 10px 20px; /* Añadir un poco de padding a izquierda y derecha */
+    display: flex; /* Usar flexbox para el alineamiento */
+    align-items: center; /* Alinear elementos verticalmente */
+    justify-content: space-between; /* Espacio entre el título y la navegación */
+    border-bottom: 1px solid #ddd; /* Borde sutil para separar el encabezado del contenido */
+}
+
+header h1 {
+    margin: 0;
+    color: #28a745; /* Nombre del proyecto en verde */
+    font-size: 24px; /* Tamaño grande para el nombre del proyecto */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinear los elementos de la lista horizontalmente */
+    justify-content: flex-end; /* Ubica la navegación hacia la derecha */
+}
+
+nav ul li {
+    margin-left: 20px; /* Espaciado a la izquierda para los elementos de la lista */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #28a745; /* Enlaces en verde para coincidir con el título */
+    font-weight: bold; /* Texto en negrita para los enlaces */
+    transition: color 0.3s; /* Transición suave para los cambios de color */
+}
+
+nav ul li a:hover {
+    color: #218838; /* Un verde más oscuro al pasar el cursor */
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+p, div {
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    border-top: 2px solid #e9ecef;
+}
+
+footer p {
+    margin: 0;
+    color: #6c757d;
+}
+
+/* Estilos de la tabla para resultados de ultrasonidos */
+.ultrasound-results {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.ultrasound-results th, 
+.ultrasound-results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.ultrasound-results th {
+    background-color: #218838; /* Un verde un poco más oscuro para los encabezados de la tabla */
+    color: white;
+}
+
+.ultrasound-results tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.ultrasound-results tr:hover {
+    background-color: #ddd;
+}
+
+/* Estilos para botones */
+button {
+    padding: 5px 10px;
+    background-color: #218838; /* Armoniza con el color de los encabezados de la tabla */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1e7e34; /* Un verde aún más oscuro para el efecto hover */
+}
+
+
+#video {
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    width: 320px;
+    height: 240px;
+  }
+  
+  #photo {
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    width: 320px;
+    height: 240px;
+  }
+  
+  #canvas {
+    display: none;
+  }
+  
+  .camera {
+    width: 340px;
+    display: inline-block;
+  }
+  
+  .output {
+    width: 340px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  #startbutton {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 32px;
+    background-color: rgb(0 150 0 / 50%);
+    border: 1px solid rgb(255 255 255 / 70%);
+    box-shadow: 0px 0px 1px 2px rgb(0 0 0 / 20%);
+    font-size: 14px;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    color: rgb(255 255 255 / 100%);
+  }
+  
+  .contentarea {
+    font-size: 16px;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    width: 760px;
+  }

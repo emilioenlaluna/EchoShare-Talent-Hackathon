@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Django</title>
+    <!-- Enlace a CSS -->
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Título y logo, si tienes un logo, puedes usar <img> en su lugar -->
+        <h1 id="logo">
+            <a href="/" style="color: #28a745; text-decoration: none;">SaludDigna</a>
+            <!--<span style="font-size: 0.6em; font-style: italic;">La salud es para todos</span>-->
+        </h1>
+        <!-- Navegación -->
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/sobre/">Sobre Nosotros</a></li>
+                <li><a href="/contacto/">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- El contenido específico de cada página irá aquí -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Proyecto Django. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlaces a JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
