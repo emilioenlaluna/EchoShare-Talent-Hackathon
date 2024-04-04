@@ -17,7 +17,7 @@ Para ejecutar la interfaz de WhatsApp de EchoShare, se necesitan los siguientes 
 ## Documentación de Desarrollo 
 https://github.com/emilioenlaluna/EchoShare-Talent-Hackathon/blob/main/ReadMeDev.md
 
-## Entreagable
+## Entregable
 https://github.com/emilioenlaluna/EchoShare-Talent-Hackathon/blob/main/Honey%20EchoShare_compressed.pdf
 
 ## Configuración
